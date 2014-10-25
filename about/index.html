@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>归档 | Sean&#39;s Notes</title>
+  <title>Sean&#39;s Notes</title>
   <meta name="author" content="周晓 ( Sean Chow )">
   
   <meta name="description" content="华丽丽的跌倒，胜过无谓的徘徊">
@@ -48,22 +48,14 @@
 </nav>
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title">归档</h2>
-
-
-  
-    <article class="post">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="page">
   
   <div class="post-content">
     <header>
       
-        <div class="icon"></div>
-        <time datetime="2014-10-25T17:21:25.000Z"><a href="/2014/10/26/hexo的light主题修改/">10月 26 2014</a></time>
-      
       
   
-    <h1 class="title"><a href="/2014/10/26/hexo的light主题修改/">hexo的light主题修改</a></h1>
+    <h1 class="title"></h1>
   
 
     </header>
@@ -126,6 +118,24 @@
       
         
         
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
       
       <div class="clearfix"></div>
     </footer>
@@ -133,111 +143,25 @@
 </article>
 
 
+<section id="comment">
+<!-- 多说评论框 start -->
+<div class="ds-thread" data-thread-key="请将此处替换成文章在你的站点中的ID" data-title="请替换成文章的标题" data-url="请替换成文章的网址"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+  var duoshuoQuery = {short_name:"seanlook"};
+  	(function() {
+  		var ds = document.createElement('script');
+  		ds.type = 'text/javascript';ds.async = true;
+	  	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+  		ds.charset = 'UTF-8';
+	  	(document.getElementsByTagName('head')[0] 
+  		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+  	})();
+   </script>
+<!-- 多说公共JS代码 end -->
+</section>
 
-  
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2014-10-23T17:21:25.000Z"><a href="/2014/10/24/seanchow/">10月 24 2014</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2014/10/24/seanchow/">seanchow</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>本人升级的目的是想在CentOS6.2上运行docker，官方建议内核版本在3.8.0及以上，于是就自己从Linux内核官方网站上下载源码，自己编译。</p>
-<h2 id="1-_准备工作">1. 准备工作</h2>
-<h3 id="确认内核及版本信息">确认内核及版本信息</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[root<span class="decorator">@hostname ~]# uname -r</span></div><div class="line"><span class="number">2.6</span><span class="number">.32</span>-<span class="number">220.</span>el6.x86_64</div><div class="line">[root<span class="decorator">@hostname ~]# cat /etc/centos-release </span></div><div class="line">CentOS release <span class="number">6.2</span> (Final)</div></pre></td></tr></table></figure>
-
-<h3 id="安装软件">安装软件</h3>
-<p>编译安装新内核，依赖于开发环境和开发库</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># yum grouplist  //查看已经安装的和未安装的软件包组，来判断我们是否安装了相应的开发环境和开发库；</span></div><div class="line"><span class="comment"># yum groupinstall "Development Tools"  //一般是安装这两个软件包组，这样做会确定你拥有编译时所需的一切工具</span></div><div class="line"><span class="comment"># yum install ncurses-devel //你必须这样才能让 make *config 这个指令正确地执行</span></div><div class="line"><span class="comment"># yum install qt-devel //如果你没有 X 环境，这一条可以不用</span></div><div class="line"><span class="comment"># yum install hmaccalc zlib-devel binutils-devel elfutils-libelf-devel //创建 CentOS-6 内核时需要它们</span></div></pre></td></tr></table></figure>
-
-<p>如果当初安装系统是选择了Software workstation，上面的安装包几乎都已包含。</p>
-<h2 id="2-_编译内核">2. 编译内核</h2>
-<p>
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2014/10/24/seanchow/#more" class="more-link">Read More</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-  
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2014-10-23T17:01:54.000Z"><a href="/2014/10/24/hello-world/">10月 24 2014</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2014/10/24/hello-world/">Hello World</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-  
-
-  <nav id="pagination">
-  
-  
-  <div class="clearfix"></div>
-</nav>
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">

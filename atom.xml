@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[Sean's Notes]]></title>
+  <subtitle><![CDATA[小样儿の部落阁]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/"/>
+  <updated>2014-10-25T21:31:43.993Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name><![CDATA[周晓 ( Sean Chow )]]></name>
+    <email><![CDATA[seanlook7@gmail.com]]></email>
+  </author>
+  
+  <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[hexo的light主题修改]]></title>
+    <link href="http://yoursite.com/2014/10/26/hexo%E7%9A%84light%E4%B8%BB%E9%A2%98%E4%BF%AE%E6%94%B9/"/>
+    <id>http://yoursite.com/2014/10/26/hexo的light主题修改/</id>
+    <published>2014-10-25T17:21:25.000Z</published>
+    <updated>2014-10-25T21:26:58.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="Light">Light</h1>
+<p>Default theme for <a href="http://zespia.tw/hexo/" target="_blank" rel="external">Hexo</a>.</p>
+<h2 id="Install">Install</h2>
+<p>Execute the following command and modify <code>theme</code> in <code>_config.yml</code> to <code>light</code>.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/hexojs/hexo-theme-light.git themes/light</div></pre></td></tr></table></figure>
+
+<h2 id="Update">Update</h2>
+<p>Execute the following command to update Light.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> themes/light</div><div class="line">git pull</div></pre></td></tr></table></figure>
+
+<h2 id="Config">Config</h2>
+<p>Default config:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">menu:</div><div class="line">  Home: /</div><div class="line">  Archives: /archives</div><div class="line"></div><div class="line">widgets:</div><div class="line">-<span class="ruby"> search</span></div><div class="line">-<span class="ruby"> category</span></div><div class="line">-<span class="ruby"> tag</span></div><div class="line">-<span class="ruby"> twitter</span></div><div class="line"></div><div class="line">excerpt_link: Read More</div><div class="line"></div><div class="line">twitter:</div><div class="line">  username:</div><div class="line">  show_replies: false</div><div class="line">  tweet_count: 5</div><div class="line"></div><div class="line">addthis:</div><div class="line">  enable: true</div><div class="line">  pubid:</div><div class="line">  facebook: true</div><div class="line">  twitter: true</div><div class="line">  google: true</div><div class="line">  pinterest: true</div><div class="line"></div><div class="line">fancybox: true</div><div class="line"></div><div class="line">google_analytics:</div><div class="line">rss:</div></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>menu</strong> - Main navigation menu</li>
+<li><strong>widget</strong> - Widgets displaying in sidebar</li>
+<li><strong>excerpt_link</strong> - “Read More” link text at the bottom of excerpted articles</li>
+<li><strong>twitter</strong> - Twitter widget config<ul>
+<li><strong>username</strong> - Twitter username</li>
+<li><strong>show_replies</strong> - Enable displaying replies</li>
+<li><strong>tweet_count</strong> - Tweets display in widget</li>
+</ul>
+</li>
+<li><strong>addthis</strong> - Share buttons at the buttom of articles (Powered by <a href="https://www.addthis.com" target="_blank" rel="external">AddThis</a>)<ul>
+<li><strong>enable</strong> - Enable share buttons</li>
+<li><strong>pubid</strong> - Profile ID of <a href="https://www.addthis.com" target="_blank" rel="external">AddThis</a></li>
+<li><strong>facebook</strong> - Enable Facebook button</li>
+<li><strong>twitter</strong> - Enable Twitter button</li>
+<li><strong>google</strong> - Enable Google+ button</li>
+<li><strong>pinterest</strong> - Enable Pinterest button</li>
+</ul>
+</li>
+<li><strong>fancybox</strong> - Enable <a href="http://fancyapps.com/fancybox/" target="_blank" rel="external">Fancybox</a></li>
+<li><strong>google_analytics</strong> - Google Analytics ID</li>
+<li><strong>rss</strong> - RSS subscription link (change if using Feedburner)</li>
+</ul>
+<h2 id="Features">Features</h2>
+<h3 id="Gallery_Post">Gallery Post</h3>
+<p><img src="http://i.minus.com/ibp6Hbytwgof9y.jpg" alt=""></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">---</span></div><div class="line">layout: photo</div><div class="line">title: Gallery Post</div><div class="line">photos:</div><div class="line"><span class="bullet">- </span>http://i.minus.com/ibobbTlfxZgITW.jpg</div><div class="line"><span class="header">- http://i.minus.com/iedpg90Y0exFS.jpg</span></div><div class="line">---</div></pre></td></tr></table></figure>
+
+<h3 id="Link_Post">Link Post</h3>
+<p><img src="http://i.minus.com/i7hBbGqh14EWo.png" alt=""></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">---</span></div><div class="line">layout: link</div><div class="line">title: Link Post</div><div class="line"><span class="header">link: http://www.google.com/</span></div><div class="line">---</div></pre></td></tr></table></figure>
+
+<h3 id="Tweet_Widget">Tweet Widget</h3>
+<p><img src="http://i.minus.com/iMC8EyF9y0Y3y.PNG" alt=""></p>
+<h3 id="Fancybox">Fancybox</h3>
+<p><img src="http://i.minus.com/iHv7h7rZNqHvo.PNG" alt=""></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="Light">Light</h1>
+<p>Default theme for <a href="http://zespia.tw/hexo/" target="_blank" rel="external">Hexo</a>.</p>
+<h2 id="Install]]>
+    </summary>
+    
+      <category term="docker" scheme="http://yoursite.com/tags/docker/"/>
+    
+      <category term="test" scheme="http://yoursite.com/tags/test/"/>
+    
+      <category term="docker" scheme="http://yoursite.com/categories/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[seanchow]]></title>
+    <link href="http://yoursite.com/2014/10/24/seanchow/"/>
+    <id>http://yoursite.com/2014/10/24/seanchow/</id>
+    <published>2014-10-23T17:21:25.000Z</published>
+    <updated>2014-10-25T19:09:11.000Z</updated>
+    <content type="html"><![CDATA[<p>本人升级的目的是想在CentOS6.2上运行docker，官方建议内核版本在3.8.0及以上，于是就自己从Linux内核官方网站上下载源码，自己编译。</p>
+<h2 id="1-_准备工作">1. 准备工作</h2>
+<h3 id="确认内核及版本信息">确认内核及版本信息</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[root<span class="decorator">@hostname ~]# uname -r</span></div><div class="line"><span class="number">2.6</span><span class="number">.32</span>-<span class="number">220.</span>el6.x86_64</div><div class="line">[root<span class="decorator">@hostname ~]# cat /etc/centos-release </span></div><div class="line">CentOS release <span class="number">6.2</span> (Final)</div></pre></td></tr></table></figure>
+
+<h3 id="安装软件">安装软件</h3>
+<p>编译安装新内核，依赖于开发环境和开发库</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># yum grouplist  //查看已经安装的和未安装的软件包组，来判断我们是否安装了相应的开发环境和开发库；</span></div><div class="line"><span class="comment"># yum groupinstall "Development Tools"  //一般是安装这两个软件包组，这样做会确定你拥有编译时所需的一切工具</span></div><div class="line"><span class="comment"># yum install ncurses-devel //你必须这样才能让 make *config 这个指令正确地执行</span></div><div class="line"><span class="comment"># yum install qt-devel //如果你没有 X 环境，这一条可以不用</span></div><div class="line"><span class="comment"># yum install hmaccalc zlib-devel binutils-devel elfutils-libelf-devel //创建 CentOS-6 内核时需要它们</span></div></pre></td></tr></table></figure>
+
+<p>如果当初安装系统是选择了Software workstation，上面的安装包几乎都已包含。</p>
+<h2 id="2-_编译内核">2. 编译内核</h2>
+<p><a id="more"></a></p>
+<h3 id="获取并解压内核源码，配置编译项">获取并解压内核源码，配置编译项</h3>
+<p>去 <a href="http://www.kernel.org" target="_blank" rel="external">http://www.kernel.org</a> 首页，可以看到有stable, longterm等版本，longterm是比stable更稳定的版本，会长时间更新，因此我选择 3.10.58。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[root<span class="decorator">@sean ~]# tar -xf linux-3.10.58.tar.xz -C /usr/src/</span></div><div class="line">[root<span class="decorator">@sean ~]# cd /usr/src/linux-3.10.58/</span></div><div class="line">[root<span class="decorator">@sean linux-3.10.58]# cp /boot/config-2.6.32-220.el6.x86_64 .config</span></div></pre></td></tr></table></figure>
+
+<p>我们在系统原有的内核配置文件的基础上建立新的编译选项，所以复制一份到当前目录下，命名为.config。接下来继续配置：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">[root@sean linux-3.10.58]# sh -c 'yes "" | make oldconfig'</div><div class="line">  HOSTCC  scripts/basic/fixdep</div><div class="line">  HOSTCC  scripts/kconfig/conf.o</div><div class="line">  SHIPPED scripts/kconfig/zconf.tab.c</div><div class="line">  SHIPPED scripts/kconfig/zconf.lex.c</div><div class="line">  SHIPPED scripts/kconfig/zconf.hash.c</div><div class="line">  HOSTCC  scripts/kconfig/zconf.tab.o</div><div class="line">  HOSTLD  scripts/kconfig/conf</div><div class="line">scripts/kconfig/conf --oldconfig Kconfig</div><div class="line">.config:555:warning: symbol value 'm' invalid for PCCARD_NONSTATIC</div><div class="line">.config:2567:warning: symbol value 'm' invalid for MFD_WM8400</div><div class="line">.config:2568:warning: symbol value 'm' invalid for MFD_WM831X</div><div class="line">.config:2569:warning: symbol value 'm' invalid for MFD_WM8350</div><div class="line">.config:2582:warning: symbol value 'm' invalid for MFD_WM8350_I2C</div><div class="line">.config:2584:warning: symbol value 'm' invalid for AB3100_CORE</div><div class="line">.config:3502:warning:</div><div class="line"></div><div class="line">&gt;  symbol value 'm' invalid for MMC_RICOH_MMC</div><div class="line">*</div><div class="line">* Restart config...</div><div class="line">*</div><div class="line">*</div><div class="line">* General setup</div><div class="line">*</div><div class="line"></div><div class="line">... ...</div><div class="line">XZ decompressor tester (XZ_DEC_TEST) [N/m/y/?] (NEW) </div><div class="line">Averaging functions (AVERAGE) [Y/?] (NEW) y</div><div class="line">CORDIC algorithm (CORDIC) [N/m/y/?] (NEW) </div><div class="line">JEDEC DDR data (DDR) [N/y/?] (NEW) </div><div class="line">#</div><div class="line"># configuration written to .config</div><div class="line">#</div></pre></td></tr></table></figure>
+
+<p>make oldconfig会读取当前目录下的.config文件，在.config文件里没有找到的选项则提示用户填写。有的文档里介绍使用make memuconfig，它便是根据需要定制模块，重新在当前目录下生成一个.config，类似界面如下：（我们不需要）<br>![make menuconfig][1]<br>备份.config文件为.config.old，并生成新的.config文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root<span class="decorator">@sean linux-3.10.58]# cp /boot/config-2.6.32-220.el6.x86_64{,.config.old}</span></div></pre></td></tr></table></figure>
+
+<h3 id="开始编译">开始编译</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[root<span class="decorator">@sean linux-3.10.58]# make -j4 bzImage  //生成内核文件</span></div><div class="line">[root<span class="decorator">@sean linux-3.10.58]# make -j4 modules  //编译模块</span></div><div class="line">[root<span class="decorator">@sean linux-3.10.58]# make -j4 modules_install  //编译安装模块</span></div></pre></td></tr></table></figure>
+
+<p>-j后面的数字是线程数，用于加快编译速度，一般的经验是，逻辑CPU，就填写那个数字，例如有8核，则为-j8。（modules部分耗时30多分钟）</p>
+<h3 id="安装">安装</h3>
+<p>[root@sean linux-3.10.58]# make install<br>实际运行到这一步时，出现</p>
+<figure class="highlight ERROR:"><figcaption><span>modinfo: could not find module vmware_balloon```，但是不影响内核安装，要避免这个问题，需要在make之前时修改.config文件，加入</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="variable">CONFIG_VMWARE_BALLOON=</span>m </div><div class="line"><span class="comment">###修改grub引导，重启###</span></div><div class="line">安装完成后，需要修改Grub引导顺序，让新安装的内核作为默认内核。</div><div class="line">编辑 grub.conf文件，</div></pre></td></tr></table></figure>
+
+<p>python<br>vi /etc/grub.conf</p>
+<h1 id="boot=/dev/sda">boot=/dev/sda</h1>
+<p>default=0<br>timeout=5<br>splashimage=(hd0,0)/grub/splash.xpm.gz<br>hiddenmenu<br>title CentOS (3.10.58)<br>    root (hd0,0)<br>…</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">数一下刚刚新安装的内核在哪个位置，从<span class="number">0</span>开始，然后设置<span class="default"><span class="keyword">default</span>为那个数字，一般新安装的内核在第一个位置，所以设置<span class="keyword">default</span>=0。</span></div></pre></td></tr></table></figure>
+
+<p>python</p>
+<h1 id="reboot">reboot</h1>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">![<span class="link_label">boot-with-new-kernel</span>][<span class="link_reference">2</span>]</div><div class="line">  [1]: images/markdown_makefeixiang.png</div><div class="line">  [2]: /img/bVde0y</div><div class="line"></div><div class="line"><span class="header">###确认当内核版本###</span></div></pre></td></tr></table></figure>
+
+<p>python<br>[root@sean ~]# uname -r<br>3.10.58</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">升级内核成功!</div><div class="line"><span class="preprocessor">##3. 异常##</span></div><div class="line"><span class="preprocessor">###编译失败（如缺少依赖包）###</span></div><div class="line">可以先清除，再重新编译：</div></pre></td></tr></table></figure>
+
+<p>python</p>
+<h1 id="make_mrproper_#完成或者安装过程出错，可以清理上次编译的现场">make mrproper         #完成或者安装过程出错，可以清理上次编译的现场</h1>
+<h1 id="make_clean">make clean</h1>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">###在vmware虚拟机上编译，出现下面的错误###</span></div></pre></td></tr></table></figure>
+
+<p>python<br>[root@sean linux-3.10.58]# make install<br>sh /usr/src/linux-3.10.58/arch/x86/boot/install.sh 3.10.58 arch/x86/boot/bzImage \<br>        System.map “/boot”<br>ERROR: modinfo: could not find module vmware_balloon</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">可以忽略，如果你有强迫症的话，尝试以下办法：</div><div class="line">i. 确认你的 .config 文件里面有 CONFIG_VMWARE_BALLOON=m 这一行，或者你可以用 make menuconfig 进去内核编译菜单，选中 Device Drivers -&gt; MISC devices -&gt; VMware Balloon Driver 为M或者*。但这一步应该在</div></pre></td></tr></table></figure>
+
+<p>make bzImage```之前进行<br>ii. 这个模块在该版本中可能已经更名为 vmw_balloon，尝试用下面的命令来解决<br>&nbsp;&nbsp;&nbsp;&nbsp;cd /lib/modules/3.10.58/kernel/drivers/misc/<br>&nbsp;&nbsp;&nbsp;&nbsp;ln -s vmw_balloon.ko vmware_balloon.ko #建立软连接</p>
+<h2 id="5-_TO-DO">5. TO-DO</h2>
+<ul>
+<li>如何清除原内核</li>
+<li>现有软件是否需要yum update升级<h2 id="6-_参考资料">6. 参考资料</h2>
+</li>
+<li><a href="http://cn.soulmachine.me/blog/20140123/" target="_blank" rel="external">CentOS 6.5 升级内核到 3.10.28</a></li>
+<li><a href="http://smilejay.com/2011/05/linux-kernel-configuration/" target="_blank" rel="external">Linux Kernel内核配置方式详解</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>本人升级的目的是想在CentOS6.2上运行docker，官方建议内核版本在3.8.0及以上，于是就自己从Linux内核官方网站上下载源码，自己编译。</p>
+<h2 id="1-_准备工作">1. 准备工作</h2>
+<h3 id="确认内核及版本信息">确认内核及版本信息</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[root<span class="decorator">@hostname ~]# uname -r</span></div><div class="line"><span class="number">2.6</span><span class="number">.32</span>-<span class="number">220.</span>el6.x86_64</div><div class="line">[root<span class="decorator">@hostname ~]# cat /etc/centos-release </span></div><div class="line">CentOS release <span class="number">6.2</span> (Final)</div></pre></td></tr></table></figure>
+
+<h3 id="安装软件">安装软件</h3>
+<p>编译安装新内核，依赖于开发环境和开发库</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># yum grouplist  //查看已经安装的和未安装的软件包组，来判断我们是否安装了相应的开发环境和开发库；</span></div><div class="line"><span class="comment"># yum groupinstall "Development Tools"  //一般是安装这两个软件包组，这样做会确定你拥有编译时所需的一切工具</span></div><div class="line"><span class="comment"># yum install ncurses-devel //你必须这样才能让 make *config 这个指令正确地执行</span></div><div class="line"><span class="comment"># yum install qt-devel //如果你没有 X 环境，这一条可以不用</span></div><div class="line"><span class="comment"># yum install hmaccalc zlib-devel binutils-devel elfutils-libelf-devel //创建 CentOS-6 内核时需要它们</span></div></pre></td></tr></table></figure>
+
+<p>如果当初安装系统是选择了Software workstation，上面的安装包几乎都已包含。</p>
+<h2 id="2-_编译内核">2. 编译内核</h2>
+<p>]]>
+    
+    </summary>
+    
+      <category term="docker" scheme="http://yoursite.com/tags/docker/"/>
+    
+      <category term="test" scheme="http://yoursite.com/tags/test/"/>
+    
+      <category term="docker" scheme="http://yoursite.com/categories/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <link href="http://yoursite.com/2014/10/24/hello-world/"/>
+    <id>http://yoursite.com/2014/10/24/hello-world/</id>
+    <published>2014-10-23T17:01:54.000Z</published>
+    <updated>2014-10-23T17:01:54.000Z</updated>
+    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick_Start">Quick Start</h2>
+<h3 id="Create_a_new_post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run_server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate_static_files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io]]>
+    </summary>
+    
+  </entry>
+  
+</feed>
