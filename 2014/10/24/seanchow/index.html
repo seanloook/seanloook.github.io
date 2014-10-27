@@ -28,6 +28,8 @@
 
 
 <body>
+  <div id="container">
+    <div id="wrap">
   <header id="header" class="inner"><div class="alignleft">
   <h1><a href="/">Sean&#39;s Notes</a></h1>
   <h2><a href="/">小样儿の部落阁</a></h2>
@@ -67,51 +69,49 @@
         <p>本人升级的目的是想在CentOS6.2上运行docker，官方建议内核版本在3.8.0及以上，于是就自己从Linux内核官方网站上下载源码，自己编译。</p>
 <h2 id="1-_准备工作">1. 准备工作</h2>
 <h3 id="确认内核及版本信息">确认内核及版本信息</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[root<span class="decorator">@hostname ~]# uname -r</span></div><div class="line"><span class="number">2.6</span><span class="number">.32</span>-<span class="number">220.</span>el6.x86_64</div><div class="line">[root<span class="decorator">@hostname ~]# cat /etc/centos-release </span></div><div class="line">CentOS release <span class="number">6.2</span> (Final)</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[root<span class="variable">@hostname</span> ~]<span class="comment"># uname -r</span></div><div class="line"><span class="number">2.6</span>.<span class="number">32</span>-<span class="number">220</span>.el6.x86_64</div><div class="line">[root<span class="variable">@hostname</span> ~]<span class="comment"># cat /etc/centos-release </span></div><div class="line"><span class="constant">CentOS</span> release <span class="number">6.2</span> (<span class="constant">Final</span>)</div></pre></td></tr></table></figure>
 
 <h3 id="安装软件">安装软件</h3>
 <p>编译安装新内核，依赖于开发环境和开发库</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># yum grouplist  //查看已经安装的和未安装的软件包组，来判断我们是否安装了相应的开发环境和开发库；</span></div><div class="line"><span class="comment"># yum groupinstall "Development Tools"  //一般是安装这两个软件包组，这样做会确定你拥有编译时所需的一切工具</span></div><div class="line"><span class="comment"># yum install ncurses-devel //你必须这样才能让 make *config 这个指令正确地执行</span></div><div class="line"><span class="comment"># yum install qt-devel //如果你没有 X 环境，这一条可以不用</span></div><div class="line"><span class="comment"># yum install hmaccalc zlib-devel binutils-devel elfutils-libelf-devel //创建 CentOS-6 内核时需要它们</span></div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="array"># yum grouplist  </span><span class="comment">//查看已经安装的和未安装的软件包组，来判断我们是否安装了相应的开发环境和开发库；</span></div><div class="line"><span class="array"># yum groupinstall </span><span class="string">"Development Tools"</span>  <span class="comment">//一般是安装这两个软件包组，这样做会确定你拥有编译时所需的一切工具</span></div><div class="line"><span class="array"># yum install ncurses</span>-devel <span class="comment">//你必须这样才能让 make *config 这个指令正确地执行</span></div><div class="line"><span class="array"># yum install qt</span>-devel <span class="comment">//如果你没有 X 环境，这一条可以不用</span></div><div class="line"><span class="array"># yum install hmaccalc zlib</span>-devel binutils-devel elfutils-libelf-devel <span class="comment">//创建 CentOS-6 内核时需要它们</span></div></pre></td></tr></table></figure>
 
 <p>如果当初安装系统是选择了Software workstation，上面的安装包几乎都已包含。</p>
 <h2 id="2-_编译内核">2. 编译内核</h2>
 <p><a id="more"></a></p>
 <h3 id="获取并解压内核源码，配置编译项">获取并解压内核源码，配置编译项</h3>
 <p>去 <a href="http://www.kernel.org" target="_blank" rel="external">http://www.kernel.org</a> 首页，可以看到有stable, longterm等版本，longterm是比stable更稳定的版本，会长时间更新，因此我选择 3.10.58。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[root<span class="decorator">@sean ~]# tar -xf linux-3.10.58.tar.xz -C /usr/src/</span></div><div class="line">[root<span class="decorator">@sean ~]# cd /usr/src/linux-3.10.58/</span></div><div class="line">[root<span class="decorator">@sean linux-3.10.58]# cp /boot/config-2.6.32-220.el6.x86_64 .config</span></div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[root<span class="variable">@sean</span> ~]<span class="comment"># tar -xf linux-3.10.58.tar.xz -C /usr/src/</span></div><div class="line">[root<span class="variable">@sean</span> ~]<span class="comment"># cd /usr/src/linux-3.10.58/</span></div><div class="line">[root<span class="variable">@sean</span> linux-<span class="number">3.10</span>.<span class="number">58</span>]<span class="comment"># cp /boot/config-2.6.32-220.el6.x86_64 .config</span></div></pre></td></tr></table></figure>
 
 <p>我们在系统原有的内核配置文件的基础上建立新的编译选项，所以复制一份到当前目录下，命名为.config。接下来继续配置：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">[root@sean linux-3.10.58]# sh -c 'yes "" | make oldconfig'</div><div class="line">  HOSTCC  scripts/basic/fixdep</div><div class="line">  HOSTCC  scripts/kconfig/conf.o</div><div class="line">  SHIPPED scripts/kconfig/zconf.tab.c</div><div class="line">  SHIPPED scripts/kconfig/zconf.lex.c</div><div class="line">  SHIPPED scripts/kconfig/zconf.hash.c</div><div class="line">  HOSTCC  scripts/kconfig/zconf.tab.o</div><div class="line">  HOSTLD  scripts/kconfig/conf</div><div class="line">scripts/kconfig/conf --oldconfig Kconfig</div><div class="line">.config:555:warning: symbol value 'm' invalid for PCCARD_NONSTATIC</div><div class="line">.config:2567:warning: symbol value 'm' invalid for MFD_WM8400</div><div class="line">.config:2568:warning: symbol value 'm' invalid for MFD_WM831X</div><div class="line">.config:2569:warning: symbol value 'm' invalid for MFD_WM8350</div><div class="line">.config:2582:warning: symbol value 'm' invalid for MFD_WM8350_I2C</div><div class="line">.config:2584:warning: symbol value 'm' invalid for AB3100_CORE</div><div class="line">.config:3502:warning:</div><div class="line"></div><div class="line">&gt;  symbol value 'm' invalid for MMC_RICOH_MMC</div><div class="line">*</div><div class="line">* Restart config...</div><div class="line">*</div><div class="line">*</div><div class="line">* General setup</div><div class="line">*</div><div class="line"></div><div class="line">... ...</div><div class="line">XZ decompressor tester (XZ_DEC_TEST) [N/m/y/?] (NEW) </div><div class="line">Averaging functions (AVERAGE) [Y/?] (NEW) y</div><div class="line">CORDIC algorithm (CORDIC) [N/m/y/?] (NEW) </div><div class="line">JEDEC DDR data (DDR) [N/y/?] (NEW) </div><div class="line">#</div><div class="line"># configuration written to .config</div><div class="line">#</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">[root@sean linux-<span class="number">3.10</span><span class="number">.58</span>]<span class="comment"># sh -c 'yes "" | make oldconfig'</span></div><div class="line">  HOSTCC  scripts/basic/fixdep</div><div class="line">  HOSTCC  scripts/kconfig/conf.o</div><div class="line">  SHIPPED scripts/kconfig/zconf.tab.c</div><div class="line">  SHIPPED scripts/kconfig/zconf.lex.c</div><div class="line">  SHIPPED scripts/kconfig/zconf.hash.c</div><div class="line">  HOSTCC  scripts/kconfig/zconf.tab.o</div><div class="line">  HOSTLD  scripts/kconfig/conf</div><div class="line">scripts/kconfig/conf --oldconfig Kconfig</div><div class="line">.config:<span class="number">555</span>:<span class="keyword">warning</span>: symbol value <span class="string">'m'</span> invalid <span class="keyword">for</span> PCCARD_NONSTATIC</div><div class="line">.config:<span class="number">2567</span>:<span class="keyword">warning</span>: symbol value <span class="string">'m'</span> invalid <span class="keyword">for</span> MFD_WM8400</div><div class="line">.config:<span class="number">2568</span>:<span class="keyword">warning</span>: symbol value <span class="string">'m'</span> invalid <span class="keyword">for</span> MFD_WM831X</div><div class="line">.config:<span class="number">2569</span>:<span class="keyword">warning</span>: symbol value <span class="string">'m'</span> invalid <span class="keyword">for</span> MFD_WM8350</div><div class="line">.config:<span class="number">2582</span>:<span class="keyword">warning</span>: symbol value <span class="string">'m'</span> invalid <span class="keyword">for</span> MFD_WM8350_I2C</div><div class="line">.config:<span class="number">2584</span>:<span class="keyword">warning</span>: symbol value <span class="string">'m'</span> invalid <span class="keyword">for</span> AB3100_CORE</div><div class="line">.config:<span class="number">3502</span>:<span class="keyword">warning</span>:</div><div class="line"></div><div class="line">&gt;  symbol value <span class="string">'m'</span> invalid <span class="keyword">for</span> MMC_RICOH_MMC</div><div class="line">*</div><div class="line">* Restart config...</div><div class="line">*</div><div class="line">*</div><div class="line">* General setup</div><div class="line">*</div><div class="line"></div><div class="line"><span class="keyword">...</span> <span class="keyword">...</span></div><div class="line">XZ decompressor tester (XZ_DEC_TEST) [N/m/y/?] (NEW) </div><div class="line">Averaging functions (AVERAGE) [Y/?] (NEW) y</div><div class="line">CORDIC algorithm (CORDIC) [N/m/y/?] (NEW) </div><div class="line">JEDEC DDR data (DDR) [N/y/?] (NEW) </div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># configuration written to .config</span></div><div class="line"><span class="comment">#</span></div></pre></td></tr></table></figure>
 
 <p>make oldconfig会读取当前目录下的.config文件，在.config文件里没有找到的选项则提示用户填写。有的文档里介绍使用make memuconfig，它便是根据需要定制模块，重新在当前目录下生成一个.config，类似界面如下：（我们不需要）<br>![make menuconfig][1]<br>备份.config文件为.config.old，并生成新的.config文件</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root<span class="decorator">@sean linux-3.10.58]# cp /boot/config-2.6.32-220.el6.x86_64{,.config.old}</span></div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root<span class="variable">@sean</span> linux-<span class="number">3.10</span>.<span class="number">58</span>]<span class="comment"># cp /boot/config-2.6.32-220.el6.x86_64{,.config.old}</span></div></pre></td></tr></table></figure>
 
 <h3 id="开始编译">开始编译</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[root<span class="decorator">@sean linux-3.10.58]# make -j4 bzImage  //生成内核文件</span></div><div class="line">[root<span class="decorator">@sean linux-3.10.58]# make -j4 modules  //编译模块</span></div><div class="line">[root<span class="decorator">@sean linux-3.10.58]# make -j4 modules_install  //编译安装模块</span></div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[root<span class="variable">@sean</span> linux-<span class="number">3.10</span>.<span class="number">58</span>]<span class="comment"># make -j4 bzImage  //生成内核文件</span></div><div class="line">[root<span class="variable">@sean</span> linux-<span class="number">3.10</span>.<span class="number">58</span>]<span class="comment"># make -j4 modules  //编译模块</span></div><div class="line">[root<span class="variable">@sean</span> linux-<span class="number">3.10</span>.<span class="number">58</span>]<span class="comment"># make -j4 modules_install  //编译安装模块</span></div></pre></td></tr></table></figure>
 
 <p>-j后面的数字是线程数，用于加快编译速度，一般的经验是，逻辑CPU，就填写那个数字，例如有8核，则为-j8。（modules部分耗时30多分钟）</p>
 <h3 id="安装">安装</h3>
 <p>[root@sean linux-3.10.58]# make install<br>实际运行到这一步时，出现</p>
 <figure class="highlight ERROR:"><figcaption><span>modinfo: could not find module vmware_balloon```，但是不影响内核安装，要避免这个问题，需要在make之前时修改.config文件，加入</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="variable">CONFIG_VMWARE_BALLOON=</span>m </div><div class="line"><span class="comment">###修改grub引导，重启###</span></div><div class="line">安装完成后，需要修改Grub引导顺序，让新安装的内核作为默认内核。</div><div class="line">编辑 grub.conf文件，</div></pre></td></tr></table></figure>
 
-<p>python<br>vi /etc/grub.conf</p>
+<p>vi /etc/grub.conf</p>
 <h1 id="boot=/dev/sda">boot=/dev/sda</h1>
 <p>default=0<br>timeout=5<br>splashimage=(hd0,0)/grub/splash.xpm.gz<br>hiddenmenu<br>title CentOS (3.10.58)<br>    root (hd0,0)<br>…</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">数一下刚刚新安装的内核在哪个位置，从<span class="number">0</span>开始，然后设置<span class="default"><span class="keyword">default</span>为那个数字，一般新安装的内核在第一个位置，所以设置<span class="keyword">default</span>=0。</span></div></pre></td></tr></table></figure>
 
-<p>python</p>
 <h1 id="reboot">reboot</h1>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">![<span class="link_label">boot-with-new-kernel</span>][<span class="link_reference">2</span>]</div><div class="line">  [1]: images/markdown_makefeixiang.png</div><div class="line">  [2]: /img/bVde0y</div><div class="line"></div><div class="line"><span class="header">###确认当内核版本###</span></div></pre></td></tr></table></figure>
 
-<p>python<br>[root@sean ~]# uname -r<br>3.10.58</p>
+<p>[root@sean ~]# uname -r<br>3.10.58</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">升级内核成功!</div><div class="line"><span class="preprocessor">##3. 异常##</span></div><div class="line"><span class="preprocessor">###编译失败（如缺少依赖包）###</span></div><div class="line">可以先清除，再重新编译：</div></pre></td></tr></table></figure>
 
-<p>python</p>
 <h1 id="make_mrproper_#完成或者安装过程出错，可以清理上次编译的现场">make mrproper         #完成或者安装过程出错，可以清理上次编译的现场</h1>
 <h1 id="make_clean">make clean</h1>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">###在vmware虚拟机上编译，出现下面的错误###</span></div></pre></td></tr></table></figure>
 
-<p>python<br>[root@sean linux-3.10.58]# make install<br>sh /usr/src/linux-3.10.58/arch/x86/boot/install.sh 3.10.58 arch/x86/boot/bzImage \<br>        System.map “/boot”<br>ERROR: modinfo: could not find module vmware_balloon</p>
+<p>[root@sean linux-3.10.58]# make install<br>sh /usr/src/linux-3.10.58/arch/x86/boot/install.sh 3.10.58 arch/x86/boot/bzImage \<br>        System.map “/boot”<br>ERROR: modinfo: could not find module vmware_balloon</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">可以忽略，如果你有强迫症的话，尝试以下办法：</div><div class="line">i. 确认你的 .config 文件里面有 CONFIG_VMWARE_BALLOON=m 这一行，或者你可以用 make menuconfig 进去内核编译菜单，选中 Device Drivers -&gt; MISC devices -&gt; VMware Balloon Driver 为M或者*。但这一步应该在</div></pre></td></tr></table></figure>
 
 <p>make bzImage```之前进行<br>ii. 这个模块在该版本中可能已经更名为 vmw_balloon，尝试用下面的命令来解决<br>&nbsp;&nbsp;&nbsp;&nbsp;cd /lib/modules/3.10.58/kernel/drivers/misc/<br>&nbsp;&nbsp;&nbsp;&nbsp;ln -s vmw_balloon.ko vmware_balloon.ko #建立软连接</p>
@@ -185,15 +185,23 @@
 </section>
 
 </div></div>
-    <aside id="sidebar" class="alignright">
-  <div class="search">
+    
+  <div id="toc" class="toc-aside">
+  <h2 class="toc-title">contents</h2>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-_准备工作"><span class="toc-number">1.</span> <span class="toc-text">1. 准备工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#确认内核及版本信息"><span class="toc-number">1.1.</span> <span class="toc-text">确认内核及版本信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装软件"><span class="toc-number">1.2.</span> <span class="toc-text">安装软件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-_编译内核"><span class="toc-number">2.</span> <span class="toc-text">2. 编译内核</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取并解压内核源码，配置编译项"><span class="toc-number">2.1.</span> <span class="toc-text">获取并解压内核源码，配置编译项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开始编译"><span class="toc-number">2.2.</span> <span class="toc-text">开始编译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-number">2.3.</span> <span class="toc-text">安装</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#boot=/dev/sda"><span class="toc-number"></span> <span class="toc-text">boot=/dev/sda</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#reboot"><span class="toc-number"></span> <span class="toc-text">reboot</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#make_mrproper_#完成或者安装过程出错，可以清理上次编译的现场"><span class="toc-number"></span> <span class="toc-text">make mrproper         #完成或者安装过程出错，可以清理上次编译的现场</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#make_clean"><span class="toc-number"></span> <span class="toc-text">make clean</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-_TO-DO"><span class="toc-number">1.</span> <span class="toc-text">5. TO-DO</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-_参考资料"><span class="toc-number">2.</span> <span class="toc-text">6. 参考资料</span></a></li></ol>
+  </div>
+
+<aside id="sidebar" class="alignright" >
+
+  
+    <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:yoursite.com">
   </form>
 </div>
-
   
+    
 <div class="widget tag">
   <h3 class="title">最新文章</h3>
   <ul class="entry">
@@ -213,8 +221,27 @@
   </ul>
 </div>
 
+  
+    
+<div class="widget-wrap">
+<h3 class="widget-title">最近评论</h3>
+<ul class="widget ds-recent-comments" data-num-items="5" data-show-avatars="0" data-show-title="1" data-show-time="1"></ul>
+</div>
+<!--多说js加载开始，一个页面只需要加载一次 -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"seanlook"};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+<!--多说js加载结束，一个页面只需要加载一次 -->
 
   
+    
 <div class="widget tag">
   <h3 class="title">分类</h3>
   <ul class="entry">
@@ -224,8 +251,8 @@
   </ul>
 </div>
 
-
   
+    
 <div class="widget tag">
   <h3 class="title">标签</h3>
   <ul class="entry">
@@ -237,7 +264,19 @@
   </ul>
 </div>
 
+  
+    
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/docker/" style="font-size: NaNpx;">docker</a><a href="/tags/test/" style="font-size: NaNpx;">test</a>
+  </div>
+</div>
+
+  
+
 </aside>
+
     <div class="clearfix"></div>
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
@@ -246,7 +285,8 @@
   
 </div>
 <div class="clearfix"></div></footer>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  </div>
+  <script src="/js/jquery.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
 
@@ -261,5 +301,29 @@
 })(jQuery);
 </script>
 
+
+<div class="bottom-btn">
+
+	<a class="icon-gotop" href="javascript:void(0)" title="返回顶部"></a>
+	<script src="/js/gotop.js" type="text/javascript"></script>
+
+	<!--
+	<script src="/js/gotop.js"></script>
+	-->
+
+
+	<a class="icon-toc-toggle" href="javascript:void(0)" title="文章目录"></a>
+	<script src="/js/toc_aside_toggle.js" type="text/javascript"></script>
+
+	<!--
+	<script src="/js/toc_aside_toggle.js"></script>
+	-->
+
+</div>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
 </body>
 </html>

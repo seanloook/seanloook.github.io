@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2014/10/24/seanchow/</loc>
+    <lastmod>2014-10-27T17:50:41.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/index.html</loc>
+    <lastmod>2014-10-26T09:10:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/index.html</loc>
+    <lastmod>2014-10-26T09:09:19.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2014/10/26/hexo%E7%9A%84light%E4%B8%BB%E9%A2%98%E4%BF%AE%E6%94%B9/</loc>
     <lastmod>2014-10-25T21:26:58.000Z</lastmod>
   </url>
@@ -14,11 +29,6 @@
   <url>
     <loc>http://yoursite.com/about/index.html</loc>
     <lastmod>2014-10-25T20:54:10.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2014/10/24/seanchow/</loc>
-    <lastmod>2014-10-25T19:09:11.000Z</lastmod>
   </url>
   
   <url>
