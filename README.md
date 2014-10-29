@@ -8,7 +8,7 @@ http://docker-doc.readthedocs.org/zh_CN/latest/reference/commandline/cli.html
 
 
 ### 1. 列出机器上的镜像 ###
-```
+```python
 # docker images 
 REPOSITORY                   TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
 ubuntu                       14.10               2185fd50e2ca        13 days ago         236.9 MB
@@ -19,7 +19,7 @@ IMAGE ID列其实是缩写，要显示完整则带上`--no-trunc`选项
 
 ### 2. 在docker index中搜索image ###
 `Usage: docker search TERM `
-```
+```python
 # docker search seanlo
 NAME                DESCRIPTION           STARS     OFFICIAL   AUTOMATED
 seanloook/centos6   sean's docker repos         0
