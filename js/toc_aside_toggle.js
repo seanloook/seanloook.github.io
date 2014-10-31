@@ -37,7 +37,7 @@
       myWidth = document.documentElement.clientWidth;
     };
   };
-  var m = $('#main'),
+  var m = $('#main-col'),
       s = $('#sidebar'),
 	  t = $('.toc-aside'),
 	  a = $('.toc-article h2'),

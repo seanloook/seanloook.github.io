@@ -54,142 +54,230 @@
 <h2 class="archive-title tag">docker</h2>
 
 
-  
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2014-10-25T17:21:25.000Z"><a href="/2014/10/26/hexo的light主题修改/">10月 26 2014</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2014/10/26/hexo的light主题修改/">hexo的light主题修改</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h1 id="Light">Light</h1>
-<p>Default theme for <a href="http://zespia.tw/hexo/" target="_blank" rel="external">Hexo</a>.</p>
-<h2 id="Install">Install</h2>
-<p>Execute the following command and modify <code>theme</code> in <code>_config.yml</code> to <code>light</code>.</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/hexojs/hexo-theme-light.git themes/light</div></pre></td></tr></table></figure>
-
-<h2 id="Update">Update</h2>
-<p>Execute the following command to update Light.</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> themes/light</div><div class="line">git pull</div></pre></td></tr></table></figure>
-
-<h2 id="Config">Config</h2>
-<p>Default config:</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">menu:</div><div class="line">  Home: /</div><div class="line">  Archives: /archives</div><div class="line"></div><div class="line">widgets:</div><div class="line">-<span class="ruby"> search</span></div><div class="line">-<span class="ruby"> category</span></div><div class="line">-<span class="ruby"> tag</span></div><div class="line">-<span class="ruby"> twitter</span></div><div class="line"></div><div class="line">excerpt_link: Read More</div><div class="line"></div><div class="line">twitter:</div><div class="line">  username:</div><div class="line">  show_replies: false</div><div class="line">  tweet_count: 5</div><div class="line"></div><div class="line">addthis:</div><div class="line">  enable: true</div><div class="line">  pubid:</div><div class="line">  facebook: true</div><div class="line">  twitter: true</div><div class="line">  google: true</div><div class="line">  pinterest: true</div><div class="line"></div><div class="line">fancybox: true</div><div class="line"></div><div class="line">google_analytics:</div><div class="line">rss:</div></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>menu</strong> - Main navigation menu</li>
-<li><strong>widget</strong> - Widgets displaying in sidebar</li>
-<li><strong>excerpt_link</strong> - “Read More” link text at the bottom of excerpted articles</li>
-<li><strong>twitter</strong> - Twitter widget config<ul>
-<li><strong>username</strong> - Twitter username</li>
-<li><strong>show_replies</strong> - Enable displaying replies</li>
-<li><strong>tweet_count</strong> - Tweets display in widget</li>
-</ul>
-</li>
-<li><strong>addthis</strong> - Share buttons at the buttom of articles (Powered by <a href="https://www.addthis.com" target="_blank" rel="external">AddThis</a>)<ul>
-<li><strong>enable</strong> - Enable share buttons</li>
-<li><strong>pubid</strong> - Profile ID of <a href="https://www.addthis.com" target="_blank" rel="external">AddThis</a></li>
-<li><strong>facebook</strong> - Enable Facebook button</li>
-<li><strong>twitter</strong> - Enable Twitter button</li>
-<li><strong>google</strong> - Enable Google+ button</li>
-<li><strong>pinterest</strong> - Enable Pinterest button</li>
-</ul>
-</li>
-<li><strong>fancybox</strong> - Enable <a href="http://fancyapps.com/fancybox/" target="_blank" rel="external">Fancybox</a></li>
-<li><strong>google_analytics</strong> - Google Analytics ID</li>
-<li><strong>rss</strong> - RSS subscription link (change if using Feedburner)</li>
-</ul>
-<h2 id="Features">Features</h2>
-<h3 id="Gallery_Post">Gallery Post</h3>
-<p><img src="http://i.minus.com/ibp6Hbytwgof9y.jpg" alt=""></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">---</span></div><div class="line">layout: photo</div><div class="line">title: Gallery Post</div><div class="line">photos:</div><div class="line"><span class="bullet">- </span>http://i.minus.com/ibobbTlfxZgITW.jpg</div><div class="line"><span class="header">- http://i.minus.com/iedpg90Y0exFS.jpg</span></div><div class="line">---</div></pre></td></tr></table></figure>
-
-<h3 id="Link_Post">Link Post</h3>
-<p><img src="http://i.minus.com/i7hBbGqh14EWo.png" alt=""></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">---</span></div><div class="line">layout: link</div><div class="line">title: Link Post</div><div class="line"><span class="header">link: http://www.google.com/</span></div><div class="line">---</div></pre></td></tr></table></figure>
-
-<h3 id="Tweet_Widget">Tweet Widget</h3>
-<p><img src="http://i.minus.com/iMC8EyF9y0Y3y.PNG" alt=""></p>
-<h3 id="Fancybox">Fancybox</h3>
-<p><img src="http://i.minus.com/iHv7h7rZNqHvo.PNG" alt=""></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
+  <div class="archive">
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2014-10-25T17:21:25.000Z"><a href="/2014/10/26/hexo的light主题修改 - 副本 (3)/">10月 26 2014</a></time>
+            
+              <h1 class="title"><a href="/2014/10/26/hexo的light主题修改 - 副本 (3)/">hexo的light主题修改</a></h1>
+            
+			dfsf<span style='color:#999;font:12px "Helvetica Neue",Helvetica,Arial,sans-serif;'><span class="ds-thread-count" data-thread-key="hexo的light主题修改 - 副本 (3)" data-count-type="comments"></span>
+          </header>
+        </div>
+      </article>
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2014-10-25T17:21:25.000Z"><a href="/2014/10/26/hexo的light主题修改 - 副本 (4)/">10月 26 2014</a></time>
+            
+              <h1 class="title"><a href="/2014/10/26/hexo的light主题修改 - 副本 (4)/">hexo的light主题修改</a></h1>
+            
+			dfsf<span style='color:#999;font:12px "Helvetica Neue",Helvetica,Arial,sans-serif;'><span class="ds-thread-count" data-thread-key="hexo的light主题修改 - 副本 (4)" data-count-type="comments"></span>
+          </header>
+        </div>
+      </article>
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2014-10-25T17:21:25.000Z"><a href="/2014/10/26/hexo的light主题修改 - 副本 (5)/">10月 26 2014</a></time>
+            
+              <h1 class="title"><a href="/2014/10/26/hexo的light主题修改 - 副本 (5)/">hexo的light主题修改</a></h1>
+            
+			dfsf<span style='color:#999;font:12px "Helvetica Neue",Helvetica,Arial,sans-serif;'><span class="ds-thread-count" data-thread-key="hexo的light主题修改 - 副本 (5)" data-count-type="comments"></span>
+          </header>
+        </div>
+      </article>
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2014-10-25T17:21:25.000Z"><a href="/2014/10/26/hexo的light主题修改 - 副本 (6)/">10月 26 2014</a></time>
+            
+              <h1 class="title"><a href="/2014/10/26/hexo的light主题修改 - 副本 (6)/">hexo的light主题修改</a></h1>
+            
+			dfsf<span style='color:#999;font:12px "Helvetica Neue",Helvetica,Arial,sans-serif;'><span class="ds-thread-count" data-thread-key="hexo的light主题修改 - 副本 (6)" data-count-type="comments"></span>
+          </header>
+        </div>
+      </article>
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2014-10-25T17:21:25.000Z"><a href="/2014/10/26/hexo的light主题修改 - 副本/">10月 26 2014</a></time>
+            
+              <h1 class="title"><a href="/2014/10/26/hexo的light主题修改 - 副本/">hexo的light主题修改</a></h1>
+            
+			dfsf<span style='color:#999;font:12px "Helvetica Neue",Helvetica,Arial,sans-serif;'><span class="ds-thread-count" data-thread-key="hexo的light主题修改 - 副本" data-count-type="comments"></span>
+          </header>
+        </div>
+      </article>
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2014-10-25T17:21:25.000Z"><a href="/2014/10/26/hexo的light主题修改/">10月 26 2014</a></time>
+            
+              <h1 class="title"><a href="/2014/10/26/hexo的light主题修改/">hexo的light主题修改</a></h1>
+            
+			dfsf<span style='color:#999;font:12px "Helvetica Neue",Helvetica,Arial,sans-serif;'><span class="ds-thread-count" data-thread-key="hexo的light主题修改" data-count-type="comments"></span>
+          </header>
+        </div>
+      </article>
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2014-10-25T17:21:25.000Z"><a href="/2014/10/26/hexo的light主题修改 - 副本 (2)/">10月 26 2014</a></time>
+            
+              <h1 class="title"><a href="/2014/10/26/hexo的light主题修改 - 副本 (2)/">hexo的light主题修改</a></h1>
+            
+			dfsf<span style='color:#999;font:12px "Helvetica Neue",Helvetica,Arial,sans-serif;'><span class="ds-thread-count" data-thread-key="hexo的light主题修改 - 副本 (2)" data-count-type="comments"></span>
+          </header>
+        </div>
+      </article>
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2014-10-23T17:21:25.000Z"><a href="/2014/10/24/seanchow - 副本 (4)/">10月 24 2014</a></time>
+            
+              <h1 class="title"><a href="/2014/10/24/seanchow - 副本 (4)/">seanchow</a></h1>
+            
+			dfsf<span style='color:#999;font:12px "Helvetica Neue",Helvetica,Arial,sans-serif;'><span class="ds-thread-count" data-thread-key="seanchow - 副本 (4)" data-count-type="comments"></span>
+          </header>
+        </div>
+      </article>
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2014-10-23T17:21:25.000Z"><a href="/2014/10/24/seanchow - 副本 (5)/">10月 24 2014</a></time>
+            
+              <h1 class="title"><a href="/2014/10/24/seanchow - 副本 (5)/">seanchow</a></h1>
+            
+			dfsf<span style='color:#999;font:12px "Helvetica Neue",Helvetica,Arial,sans-serif;'><span class="ds-thread-count" data-thread-key="seanchow - 副本 (5)" data-count-type="comments"></span>
+          </header>
+        </div>
+      </article>
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2014-10-23T17:21:25.000Z"><a href="/2014/10/24/seanchow - 副本 (2)/">10月 24 2014</a></time>
+            
+              <h1 class="title"><a href="/2014/10/24/seanchow - 副本 (2)/">seanchow</a></h1>
+            
+			dfsf<span style='color:#999;font:12px "Helvetica Neue",Helvetica,Arial,sans-serif;'><span class="ds-thread-count" data-thread-key="seanchow - 副本 (2)" data-count-type="comments"></span>
+          </header>
+        </div>
+      </article>
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2014-10-23T17:21:25.000Z"><a href="/2014/10/24/seanchow - 副本 (6)/">10月 24 2014</a></time>
+            
+              <h1 class="title"><a href="/2014/10/24/seanchow - 副本 (6)/">seanchow</a></h1>
+            
+			dfsf<span style='color:#999;font:12px "Helvetica Neue",Helvetica,Arial,sans-serif;'><span class="ds-thread-count" data-thread-key="seanchow - 副本 (6)" data-count-type="comments"></span>
+          </header>
+        </div>
+      </article>
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2014-10-23T17:21:25.000Z"><a href="/2014/10/24/seanchow - 副本 (7)/">10月 24 2014</a></time>
+            
+              <h1 class="title"><a href="/2014/10/24/seanchow - 副本 (7)/">seanchow</a></h1>
+            
+			dfsf<span style='color:#999;font:12px "Helvetica Neue",Helvetica,Arial,sans-serif;'><span class="ds-thread-count" data-thread-key="seanchow - 副本 (7)" data-count-type="comments"></span>
+          </header>
+        </div>
+      </article>
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2014-10-23T17:21:25.000Z"><a href="/2014/10/24/seanchow - 副本 (8)/">10月 24 2014</a></time>
+            
+              <h1 class="title"><a href="/2014/10/24/seanchow - 副本 (8)/">seanchow</a></h1>
+            
+			dfsf<span style='color:#999;font:12px "Helvetica Neue",Helvetica,Arial,sans-serif;'><span class="ds-thread-count" data-thread-key="seanchow - 副本 (8)" data-count-type="comments"></span>
+          </header>
+        </div>
+      </article>
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2014-10-23T17:21:25.000Z"><a href="/2014/10/24/seanchow - 副本 (9)/">10月 24 2014</a></time>
+            
+              <h1 class="title"><a href="/2014/10/24/seanchow - 副本 (9)/">seanchow</a></h1>
+            
+			dfsf<span style='color:#999;font:12px "Helvetica Neue",Helvetica,Arial,sans-serif;'><span class="ds-thread-count" data-thread-key="seanchow - 副本 (9)" data-count-type="comments"></span>
+          </header>
+        </div>
+      </article>
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2014-10-23T17:21:25.000Z"><a href="/2014/10/24/seanchow - 副本/">10月 24 2014</a></time>
+            
+              <h1 class="title"><a href="/2014/10/24/seanchow - 副本/">seanchow</a></h1>
+            
+			dfsf<span style='color:#999;font:12px "Helvetica Neue",Helvetica,Arial,sans-serif;'><span class="ds-thread-count" data-thread-key="seanchow - 副本" data-count-type="comments"></span>
+          </header>
+        </div>
+      </article>
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2014-10-23T17:21:25.000Z"><a href="/2014/10/24/seanchow/">10月 24 2014</a></time>
+            
+              <h1 class="title"><a href="/2014/10/24/seanchow/">seanchow</a></h1>
+            
+			dfsf<span style='color:#999;font:12px "Helvetica Neue",Helvetica,Arial,sans-serif;'><span class="ds-thread-count" data-thread-key="seanchow" data-count-type="comments"></span>
+          </header>
+        </div>
+      </article>
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2014-10-23T17:21:25.000Z"><a href="/2014/10/24/seanchow - 副本 (3)/">10月 24 2014</a></time>
+            
+              <h1 class="title"><a href="/2014/10/24/seanchow - 副本 (3)/">seanchow</a></h1>
+            
+			dfsf<span style='color:#999;font:12px "Helvetica Neue",Helvetica,Arial,sans-serif;'><span class="ds-thread-count" data-thread-key="seanchow - 副本 (3)" data-count-type="comments"></span>
+          </header>
+        </div>
+      </article>
+    
   </div>
-</article>
-
-
-
-  
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2014-10-23T17:21:25.000Z"><a href="/2014/10/24/seanchow/">10月 24 2014</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2014/10/24/seanchow/">seanchow</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>本人升级的目的是想在CentOS6.2上运行docker，官方建议内核版本在3.8.0及以上，于是就自己从Linux内核官方网站上下载源码，自己编译。</p>
-<h2 id="1-_准备工作">1. 准备工作</h2>
-<h3 id="确认内核及版本信息">确认内核及版本信息</h3>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[root<span class="variable">@hostname</span> ~]<span class="comment"># uname -r</span></div><div class="line"><span class="number">2.6</span>.<span class="number">32</span>-<span class="number">220</span>.el6.x86_64</div><div class="line">[root<span class="variable">@hostname</span> ~]<span class="comment"># cat /etc/centos-release </span></div><div class="line"><span class="constant">CentOS</span> release <span class="number">6.2</span> (<span class="constant">Final</span>)</div></pre></td></tr></table></figure>
-
-<h3 id="安装软件">安装软件</h3>
-<p>编译安装新内核，依赖于开发环境和开发库</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="array"># yum grouplist  </span><span class="comment">//查看已经安装的和未安装的软件包组，来判断我们是否安装了相应的开发环境和开发库；</span></div><div class="line"><span class="array"># yum groupinstall </span><span class="string">"Development Tools"</span>  <span class="comment">//一般是安装这两个软件包组，这样做会确定你拥有编译时所需的一切工具</span></div><div class="line"><span class="array"># yum install ncurses</span>-devel <span class="comment">//你必须这样才能让 make *config 这个指令正确地执行</span></div><div class="line"><span class="array"># yum install qt</span>-devel <span class="comment">//如果你没有 X 环境，这一条可以不用</span></div><div class="line"><span class="array"># yum install hmaccalc zlib</span>-devel binutils-devel elfutils-libelf-devel <span class="comment">//创建 CentOS-6 内核时需要它们</span></div></pre></td></tr></table></figure>
-
-<p>如果当初安装系统是选择了Software workstation，上面的安装包几乎都已包含。</p>
-<h2 id="2-_编译内核">2. 编译内核</h2>
-<p>
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2014/10/24/seanchow/#more" class="more-link">Read More</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-  
-
-  <nav id="pagination">
-  
-  
-  <div class="clearfix"></div>
-</nav>
 </div></div>
     
 <aside id="sidebar" class="alignright" >
@@ -198,7 +286,7 @@
     <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
-    <input type="hidden" name="q" value="site:yoursite.com">
+    <input type="hidden" name="q" value="site:localhost:4000">
   </form>
 </div>
   
@@ -208,15 +296,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/2014/10/26/hexo的light主题修改/">hexo的light主题修改</a>
+        <a href="/2014/11/01/hello-world - 副本 (9)/">Hello World</a>
       </li>
     
       <li>
-        <a href="/2014/10/24/seanchow/">seanchow</a>
+        <a href="/2014/11/01/hello-world - 副本 (7)/">Hello World</a>
       </li>
     
       <li>
-        <a href="/2014/10/24/hello-world/">Hello World</a>
+        <a href="/2014/11/01/hello-world - 副本 (8)/">Hello World</a>
+      </li>
+    
+      <li>
+        <a href="/2014/11/01/hello-world - 副本 (5)/">Hello World</a>
+      </li>
+    
+      <li>
+        <a href="/2014/11/01/hello-world - 副本 (6)/">Hello World</a>
       </li>
     
   </ul>
@@ -247,7 +343,7 @@ var duoshuoQuery = {short_name:"seanlook"};
   <h3 class="title">分类</h3>
   <ul class="entry">
   
-    <li><a href="/categories/docker/">docker</a><small>2</small></li>
+    <li><a href="/categories/docker/">docker</a><small>17</small></li>
   
   </ul>
 </div>
@@ -258,9 +354,9 @@ var duoshuoQuery = {short_name:"seanlook"};
   <h3 class="title">标签</h3>
   <ul class="entry">
   
-    <li><a href="/tags/docker/">docker</a><small>2</small></li>
+    <li><a href="/tags/docker/">docker</a><small>17</small></li>
   
-    <li><a href="/tags/test/">test</a><small>2</small></li>
+    <li><a href="/tags/test/">test</a><small>17</small></li>
   
   </ul>
 </div>
